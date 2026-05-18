@@ -101,7 +101,7 @@ volatile uint16_t susl;
 volatile uint16_t susr;
 volatile uint16_t ster;
 volatile uint16_t stel;
-//coba upload baru
+
 volatile uint16_t bsemap;
 volatile uint16_t apps1map;
 volatile uint16_t apps2map;
