@@ -1,0 +1,10 @@
+22:38:13 **** Incremental Build of configuration Debug for project h753sd ****
+make -j8 all 
+arm-none-eabi-size  h753sd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  74308	    136	  77384	 151828	  25114	h753sd.elf
+Finished building: default.size.stdout
+ 
+
+22:38:14 Build Finished. 0 errors, 0 warnings. (took 1s.801ms)
+
