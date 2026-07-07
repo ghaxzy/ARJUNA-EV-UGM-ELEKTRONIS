@@ -1,16 +1,4 @@
-22:06:00 **** Clean-only build of configuration Debug for project h753sd ****
-make -j8 clean 
-rm -rf ./Middlewares/Third_Party/FatFs/src/option/ccsbcs.cyclo ./Middlewares/Third_Party/FatFs/src/option/ccsbcs.d ./Middlewares/Third_Party/FatFs/src/option/ccsbcs.o ./Middlewares/Third_Party/FatFs/src/option/ccsbcs.su ./Middlewares/Third_Party/FatFs/src/option/syscall.cyclo ./Middlewares/Third_Party/FatFs/src/option/syscall.d ./Middlewares/Third_Party/FatFs/src/option/syscall.o ./Middlewares/Third_Party/FatFs/src/option/syscall.su
-rm -rf ./Middlewares/Third_Party/FatFs/src/diskio.cyclo ./Middlewares/Third_Party/FatFs/src/diskio.d ./Middlewares/Third_Party/FatFs/src/diskio.o ./Middlewares/Third_Party/FatFs/src/diskio.su ./Middlewares/Third_Party/FatFs/src/ff.cyclo ./Middlewares/Third_Party/FatFs/src/ff.d ./Middlewares/Third_Party/FatFs/src/ff.o ./Middlewares/Third_Party/FatFs/src/ff.su ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.cyclo ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.d ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.o ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.su
-rm -rf ./FATFS/Target/bsp_driver_sd.cyclo ./FATFS/Target/bsp_driver_sd.d ./FATFS/Target/bsp_driver_sd.o ./FATFS/Target/bsp_driver_sd.su ./FATFS/Target/fatfs_platform.cyclo ./FATFS/Target/fatfs_platform.d ./FATFS/Target/fatfs_platform.o ./FATFS/Target/fatfs_platform.su ./FATFS/Target/sd_diskio.cyclo ./FATFS/Target/sd_diskio.d ./FATFS/Target/sd_diskio.o ./FATFS/Target/sd_diskio.su
-rm -rf ./FATFS/App/fatfs.cyclo ./FATFS/App/fatfs.d ./FATFS/App/fatfs.o ./FATFS/App/fatfs.su
-rm -rf ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.su
-rm -rf ./Core/Startup/startup_stm32h753vitx.d ./Core/Startup/startup_stm32h753vitx.o
-rm -rf ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32h7xx.cyclo ./Core/Src/system_stm32h7xx.d ./Core/Src/system_stm32h7xx.o ./Core/Src/system_stm32h7xx.su
-rm -rf ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.su
-rm -rf default.size.stdout h753sd.elf h753sd.list h753sd.map
- 
-22:06:14 **** Build of configuration Debug for project h753sd ****
+01:53:13 **** Build of configuration Debug for project h753sd ****
 make -j8 all 
 arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/option/ccsbcs.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/option/ccsbcs.d" -MT"Middlewares/Third_Party/FatFs/src/option/ccsbcs.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/option/ccsbcs.o"
 arm-none-eabi-gcc "../Middlewares/Third_Party/FatFs/src/option/syscall.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FatFs/src/option/syscall.d" -MT"Middlewares/Third_Party/FatFs/src/option/syscall.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FatFs/src/option/syscall.o"
@@ -48,6 +36,8 @@ arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.c" -mcpu
 arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.d" -MT"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.o"
 arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.d" -MT"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o"
 arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.d" -MT"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.d" -MT"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.d" -MT"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o"
 arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.d" -MT"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.o"
 arm-none-eabi-gcc "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.d" -MT"Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.o"
 arm-none-eabi-gcc -mcpu=cortex-m7 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32h753vitx.d" -MT"Core/Startup/startup_stm32h753vitx.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32h753vitx.o" "../Core/Startup/startup_stm32h753vitx.s"
@@ -58,8 +48,8 @@ arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBU
 arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
 arm-none-eabi-gcc "../Core/Src/system_stm32h7xx.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32h7xx.d" -MT"Core/Src/system_stm32h7xx.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32h7xx.o"
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
+../Core/Src/main.c:726:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  726 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
       |                                                                   ^~~~~~
 In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
                  from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
@@ -69,15 +59,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
+../Core/Src/main.c:815:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  815 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
       |                                                                           ^~~~~
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+../Core/Src/main.c:1114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1114 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
       |                             ^~~~~~~~~~~~~~~~~~~
       |                             |
       |                             uint16_t * {aka short unsigned int *}
@@ -86,15 +76,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
  1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
       |                                                                    ~~~~~~~~~~^~~~~
 ../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |            ^~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
+../Core/Src/main.c:1705:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
+ 1705 | static void SDIO_SDCard_Test(void)
       |             ^~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: h753sd.elf
@@ -102,17 +92,24 @@ Finished building target: h753sd.elf
 arm-none-eabi-size  h753sd.elf 
 arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
    text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
+  83880	    792	  77736	 162408	  27a68	h753sd.elf
 Finished building: default.size.stdout
  
 Finished building: h753sd.list
  
-22:08:59 **** Incremental Build of configuration Debug for project h753sd ****
+02:07:57 **** Incremental Build of configuration Debug for project h753sd ****
+make -j8 all 
+arm-none-eabi-size  h753sd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83880	    792	  77736	 162408	  27a68	h753sd.elf
+Finished building: default.size.stdout
+ 
+02:12:00 **** Incremental Build of configuration Debug for project h753sd ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
+../Core/Src/main.c:726:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  726 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
       |                                                                   ^~~~~~
 In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
                  from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
@@ -122,15 +119,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
+../Core/Src/main.c:815:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  815 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
       |                                                                           ^~~~~
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+../Core/Src/main.c:1114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1114 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
       |                             ^~~~~~~~~~~~~~~~~~~
       |                             |
       |                             uint16_t * {aka short unsigned int *}
@@ -139,15 +136,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
  1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
       |                                                                    ~~~~~~~~~~^~~~~
 ../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1290:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1290 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |                       ^~~~~~~~~
-../Core/Src/main.c:1290:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1290 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |            ^~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:1282:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1282 | static void SDIO_SDCard_Test(void)
+../Core/Src/main.c:1705:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
+ 1705 | static void SDIO_SDCard_Test(void)
       |             ^~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: h753sd.elf
@@ -155,24 +152,24 @@ Finished building target: h753sd.elf
 arm-none-eabi-size  h753sd.elf 
 arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
    text	   data	    bss	    dec	    hex	filename
-  74184	    136	  77384	 151704	  25098	h753sd.elf
+  83856	    788	  77740	 162384	  27a50	h753sd.elf
 Finished building: default.size.stdout
  
 Finished building: h753sd.list
  
-22:09:48 **** Incremental Build of configuration Debug for project h753sd ****
+02:12:58 **** Incremental Build of configuration Debug for project h753sd ****
 make -j8 all 
 arm-none-eabi-size  h753sd.elf 
    text	   data	    bss	    dec	    hex	filename
-  74184	    136	  77384	 151704	  25098	h753sd.elf
+  83856	    788	  77740	 162384	  27a50	h753sd.elf
 Finished building: default.size.stdout
  
-22:14:12 **** Incremental Build of configuration Debug for project h753sd ****
+02:13:48 **** Incremental Build of configuration Debug for project h753sd ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
+../Core/Src/main.c:726:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  726 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
       |                                                                   ^~~~~~
 In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
                  from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
@@ -182,15 +179,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
+../Core/Src/main.c:815:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  815 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
       |                                                                           ^~~~~
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+../Core/Src/main.c:1114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1114 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
       |                             ^~~~~~~~~~~~~~~~~~~
       |                             |
       |                             uint16_t * {aka short unsigned int *}
@@ -199,15 +196,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
  1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
       |                                                                    ~~~~~~~~~~^~~~~
 ../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |            ^~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
+../Core/Src/main.c:1705:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
+ 1705 | static void SDIO_SDCard_Test(void)
       |             ^~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: h753sd.elf
@@ -215,17 +212,24 @@ Finished building target: h753sd.elf
 arm-none-eabi-size  h753sd.elf 
 arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
    text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
+  83880	    792	  77736	 162408	  27a68	h753sd.elf
 Finished building: default.size.stdout
  
 Finished building: h753sd.list
  
-22:14:46 **** Incremental Build of configuration Debug for project h753sd ****
+02:14:33 **** Incremental Build of configuration Debug for project h753sd ****
+make -j8 all 
+arm-none-eabi-size  h753sd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83880	    792	  77736	 162408	  27a68	h753sd.elf
+Finished building: default.size.stdout
+ 
+02:16:21 **** Incremental Build of configuration Debug for project h753sd ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
+../Core/Src/main.c:726:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  726 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
       |                                                                   ^~~~~~
 In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
                  from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
@@ -235,15 +239,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
+../Core/Src/main.c:815:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  815 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
       |                                                                           ^~~~~
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+../Core/Src/main.c:1114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1114 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
       |                             ^~~~~~~~~~~~~~~~~~~
       |                             |
       |                             uint16_t * {aka short unsigned int *}
@@ -251,23 +255,16 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
  1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
       |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'MX_RTC_Init':
-../Core/Src/main.c:1135:19: warning: variable 'sDate' set but not used [-Wunused-but-set-variable]
- 1135 |   RTC_DateTypeDef sDate = {0};
-      |                   ^~~~~
-../Core/Src/main.c:1134:19: warning: variable 'sTime' set but not used [-Wunused-but-set-variable]
- 1134 |   RTC_TimeTypeDef sTime = {0};
-      |                   ^~~~~
 ../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |            ^~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
+../Core/Src/main.c:1705:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
+ 1705 | static void SDIO_SDCard_Test(void)
       |             ^~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: h753sd.elf
@@ -275,17 +272,24 @@ Finished building target: h753sd.elf
 arm-none-eabi-size  h753sd.elf 
 arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
    text	   data	    bss	    dec	    hex	filename
-  73612	    136	  77384	 151132	  24e5c	h753sd.elf
+  83856	    788	  77740	 162384	  27a50	h753sd.elf
 Finished building: default.size.stdout
  
 Finished building: h753sd.list
  
-22:19:31 **** Incremental Build of configuration Debug for project h753sd ****
+02:17:11 **** Incremental Build of configuration Debug for project h753sd ****
+make -j8 all 
+arm-none-eabi-size  h753sd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83856	    788	  77740	 162384	  27a50	h753sd.elf
+Finished building: default.size.stdout
+ 
+02:18:36 **** Incremental Build of configuration Debug for project h753sd ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
+../Core/Src/main.c:726:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  726 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
       |                                                                   ^~~~~~
 In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
                  from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
@@ -295,15 +299,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
+../Core/Src/main.c:815:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  815 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
       |                                                                           ^~~~~
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+../Core/Src/main.c:1114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1114 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
       |                             ^~~~~~~~~~~~~~~~~~~
       |                             |
       |                             uint16_t * {aka short unsigned int *}
@@ -312,15 +316,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
  1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
       |                                                                    ~~~~~~~~~~^~~~~
 ../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |            ^~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
+../Core/Src/main.c:1705:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
+ 1705 | static void SDIO_SDCard_Test(void)
       |             ^~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: h753sd.elf
@@ -328,17 +332,24 @@ Finished building target: h753sd.elf
 arm-none-eabi-size  h753sd.elf 
 arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
    text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
+  83856	    788	  77740	 162384	  27a50	h753sd.elf
 Finished building: default.size.stdout
  
 Finished building: h753sd.list
  
-22:21:13 **** Incremental Build of configuration Debug for project h753sd ****
+02:19:32 **** Incremental Build of configuration Debug for project h753sd ****
+make -j8 all 
+arm-none-eabi-size  h753sd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83856	    788	  77740	 162384	  27a50	h753sd.elf
+Finished building: default.size.stdout
+ 
+02:23:49 **** Incremental Build of configuration Debug for project h753sd ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
+../Core/Src/main.c:726:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  726 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
       |                                                                   ^~~~~~
 In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
                  from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
@@ -348,15 +359,22 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
 ../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
+../Core/Src/main.c:815:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  815 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
       |                                                                           ^~~~~
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
  2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
       |                                                                            ~~~~~~~~~^~~~~~~
+../Core/Src/main.c: In function 'loopUtama':
+../Core/Src/main.c:966:27: error: subscripted value is neither array nor pointer nor vector
+  966 |         canVci2[6]=VdcBamo[1];
+      |                           ^
+../Core/Src/main.c:967:27: error: subscripted value is neither array nor pointer nor vector
+  967 |         canVci2[7]=VdcBamo[2];
+      |                           ^
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+../Core/Src/main.c:1114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1114 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
       |                             ^~~~~~~~~~~~~~~~~~~
       |                             |
       |                             uint16_t * {aka short unsigned int *}
@@ -365,411 +383,15 @@ In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
  1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
       |                                                                    ~~~~~~~~~~^~~~~
 ../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
+../Core/Src/main.c:1713:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
       |            ^~~~~~~~~
 ../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
+../Core/Src/main.c:1705:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
+ 1705 | static void SDIO_SDCard_Test(void)
       |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:24:39 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
-      |                                                                   ^~~~~~
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
-                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
-      |                                                                           ^~~~~
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
-      |                             ^~~~~~~~~~~~~~~~~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
- 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |            ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:29:37 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32h7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32h7xx_hal_msp.d" -MT"Core/Src/stm32h7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32h7xx_hal_msp.o"
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
-      |                                                                   ^~~~~~
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
-                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
-      |                                                                           ^~~~~
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
-      |                             ^~~~~~~~~~~~~~~~~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
- 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1289:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1289 |   uint32_t TotalSize, FreeSpace;
-      |                       ^~~~~~~~~
-../Core/Src/main.c:1289:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1289 |   uint32_t TotalSize, FreeSpace;
-      |            ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:1281:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1281 | static void SDIO_SDCard_Test(void)
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74252	    136	  77384	 151772	  250dc	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:32:19 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32h7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32h7xx_hal_msp.d" -MT"Core/Src/stm32h7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32h7xx_hal_msp.o"
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
-      |                                                                   ^~~~~~
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
-                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
-      |                                                                           ^~~~~
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
-      |                             ^~~~~~~~~~~~~~~~~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
- 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |            ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:32:57 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-size  h753sd.elf 
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
-22:34:16 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
-      |                                                                   ^~~~~~
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
-                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
-      |                                                                           ^~~~~
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
-      |                             ^~~~~~~~~~~~~~~~~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
- 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |            ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:35:14 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
-      |                                                                   ^~~~~~
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
-                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
-      |                                                                           ^~~~~
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
-      |                             ^~~~~~~~~~~~~~~~~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
- 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |            ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74184	    136	  77384	 151704	  25098	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:35:38 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
-      |                                                                   ^~~~~~
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
-                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
-      |                                                                           ^~~~~
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
-      |                             ^~~~~~~~~~~~~~~~~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
- 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |            ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74244	    136	  77384	 151764	  250d4	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:36:14 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
-../Core/Src/main.c:522:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  522 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
-      |                                                                   ^~~~~~
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
-                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
-../Core/Src/main.c:568:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-  568 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
-      |                                                                           ^~~~~
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
- 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
-      |                                                                            ~~~~~~~~~^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:763:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
-  763 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
-      |                             ^~~~~~~~~~~~~~~~~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
-../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
- 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
-      |                                                                    ~~~~~~~~~~^~~~~
-../Core/Src/main.c: In function 'SDIO_SDCard_Test':
-../Core/Src/main.c:1294:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |                       ^~~~~~~~~
-../Core/Src/main.c:1294:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
- 1294 |   uint32_t TotalSize, FreeSpace;
-      |            ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:1286:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
- 1286 | static void SDIO_SDCard_Test(void)
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "h753sd.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Arjuna G14\ARJUNA-EV-UGM-ELEKTRONIS\VCU\firmware\h753sd\STM32H753VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="h753sd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: h753sd.elf
- 
-arm-none-eabi-size  h753sd.elf 
-arm-none-eabi-objdump -h -S h753sd.elf  > "h753sd.list"
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
-Finished building: h753sd.list
- 
-22:38:13 **** Incremental Build of configuration Debug for project h753sd ****
-make -j8 all 
-arm-none-eabi-size  h753sd.elf 
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.

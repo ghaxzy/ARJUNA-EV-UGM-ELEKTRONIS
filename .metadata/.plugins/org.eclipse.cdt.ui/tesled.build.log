@@ -1,0 +1,10 @@
+15:46:13 **** Build of configuration Debug for project tesled ****
+make -j8 all 
+arm-none-eabi-size  tesled.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7864	     16	   1568	   9448	   24e8	tesled.elf
+Finished building: default.size.stdout
+ 
+
+15:46:16 Build Finished. 0 errors, 0 warnings. (took 2s.904ms)
+

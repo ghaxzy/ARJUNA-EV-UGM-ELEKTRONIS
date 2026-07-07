@@ -1,10 +1,54 @@
-22:38:13 **** Incremental Build of configuration Debug for project h753sd ****
+02:23:49 **** Incremental Build of configuration Debug for project h753sd ****
 make -j8 all 
-arm-none-eabi-size  h753sd.elf 
-   text	   data	    bss	    dec	    hex	filename
-  74308	    136	  77384	 151828	  25114	h753sd.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H753xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo0Callback':
+../Core/Src/main.c:726:67: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  726 |         HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &RxHeader, msgAll);
+      |                                                                   ^~~~~~
+In file included from ../Core/Inc/stm32h7xx_hal_conf.h:306,
+                 from ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+ 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
+      |                                                                            ~~~~~~~~~^~~~~~~
+../Core/Src/main.c: In function 'HAL_FDCAN_RxFifo1Callback':
+../Core/Src/main.c:815:75: warning: passing argument 4 of 'HAL_FDCAN_GetRxMessage' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  815 |                 HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO1, &RxHeader, msgMC);
+      |                                                                           ^~~~~
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_fdcan.h:2063:85: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+ 2063 |                                          FDCAN_RxHeaderTypeDef *pRxHeader, uint8_t *pRxData);
+      |                                                                            ~~~~~~~~~^~~~~~~
+../Core/Src/main.c: In function 'loopUtama':
+../Core/Src/main.c:966:27: error: subscripted value is neither array nor pointer nor vector
+  966 |         canVci2[6]=VdcBamo[1];
+      |                           ^
+../Core/Src/main.c:967:27: error: subscripted value is neither array nor pointer nor vector
+  967 |         canVci2[7]=VdcBamo[2];
+      |                           ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:1114:29: warning: passing argument 2 of 'HAL_ADC_Start_DMA' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1114 |   HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+      |                             ^~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32h7xx_hal_conf.h:302:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc.h:1961:78: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+ 1961 | HAL_StatusTypeDef       HAL_ADC_Start_DMA(ADC_HandleTypeDef *hadc, uint32_t *pData, uint32_t Length);
+      |                                                                    ~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'SDIO_SDCard_Test':
+../Core/Src/main.c:1713:23: warning: variable 'FreeSpace' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
+      |                       ^~~~~~~~~
+../Core/Src/main.c:1713:12: warning: variable 'TotalSize' set but not used [-Wunused-but-set-variable]
+ 1713 |   uint32_t TotalSize, FreeSpace;
+      |            ^~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:1705:13: warning: 'SDIO_SDCard_Test' defined but not used [-Wunused-function]
+ 1705 | static void SDIO_SDCard_Test(void)
+      |             ^~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
 
-22:38:14 Build Finished. 0 errors, 0 warnings. (took 1s.801ms)
+02:23:51 Build Failed. 3 errors, 6 warnings. (took 2s.36ms)
 
