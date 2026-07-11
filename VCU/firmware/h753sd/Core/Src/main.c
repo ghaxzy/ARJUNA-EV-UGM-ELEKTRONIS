@@ -71,9 +71,14 @@ FDCAN_RxHeaderTypeDef RxHeader;
 #define IGNPIN GPIO_PIN_0
 #define BOOSTPORT GPIOA
 #define BOOSTPIN GPIO_PIN_1
-#define P_MAX_W 70000.0f
+#define P_MAX_W 10000.0f // IKI 10kw
+#define LOG_PERIOD_MS 2
 
+uint32_t logStartTick;
+uint32_t logStartMs;
+uint32_t nextLogTick;
 uint8_t boostVal;
+
 typedef struct {
     uint8_t buffer[2][LOG_BUFFER_SIZE];
     uint32_t writeIndex[2];
@@ -82,6 +87,39 @@ typedef struct {
     volatile uint8_t isFlushing;
     uint32_t lastFlushTick;
 } LogBuffer_t;
+
+typedef enum {
+	REQ_RSM_Sensor = 0,
+	REQ_RSM_Status,
+	REQ_BMS_Current,
+	REQ_BMS_Temp,
+	REQ_BMS_AvgA,
+	REQ_BMS_AvgB,
+	REQ_BMS_MinMaxVA,
+	REQ_BMS_MinMaxVB,
+	REQ_BMS_VtotalA,
+	REQ_BMS_VtotalB,
+	REQ_IMU_Accel,
+	REQ_IMU_Gyro,
+	REQ_IMU_Mag,
+	REQ_IMU_Angle,
+    REQ_ALL_COUNT
+} RequestAllIdx_t;
+
+typedef enum {
+    REQ_BAMO_VPHASE = 0,
+    REQ_BAMO_LOGICERR,
+    REQ_BAMO_SPEED,
+    REQ_BAMO_IMAXPK,
+    REQ_BAMO_TMOTOR,
+    REQ_BAMO_TIGBT,
+    REQ_BAMO_IACTUAL,
+    REQ_BAMO_VDCBAT,
+    REQ_BAMO_COUNT
+} RequestBamoIdx_t;
+
+volatile uint8_t requestAllReceived[REQ_ALL_COUNT]   = {0};
+volatile uint8_t requestBamoReceived[REQ_BAMO_COUNT] = {0};
 
 __attribute__((section(".dma_buffer"), aligned(32)))
 LogBuffer_t logBuffer = {0};
@@ -155,7 +193,7 @@ volatile uint16_t apps1min = 49155;
 volatile uint16_t apps1max = 56000;
 volatile uint16_t apps2min = 21400;
 volatile uint16_t apps2max = 42900;
-volatile uint16_t bsemin = 1220;
+volatile uint16_t bsemin = 9600;
 volatile uint16_t bsemax = 56000;
 
 volatile uint16_t torqueCmd;
@@ -186,7 +224,7 @@ uint8_t canTmotor[3] = {0x3d, 0x49, 100};
 uint8_t canTigbt[3] = {0x3d, 0x4a, 121};
 uint8_t canVdcBat[3] = {0x3d, 0x66, 2};
 uint8_t canPower[3] = {0x3d, 0xf6, 12};
-uint8_t canVphase[3] = {0x3d, 0x8a, 200};
+uint8_t canVphase[3] = {0x3d, 0x8a, 9};
 
 uint8_t canRsm1[2] = {0,1};
 uint8_t canRsm2[2] = {1,20};
@@ -236,7 +274,9 @@ uint16_t suhuIGBT;
 uint16_t VdcBamo;
 uint16_t powerMotor;
 uint16_t arusBms;
-
+uint8_t tempA;
+uint8_t tempB;
+uint8_t tempTotal;
 uint16_t Vout;
 
 uint32_t teganganHVA;
@@ -304,7 +344,7 @@ uint8_t bitWrite(uint8_t data, uint8_t kolom, uint8_t value);
 uint8_t bitRead(uint8_t data, uint8_t kolom);
 long map(long x, long in_min, long in_max, long out_min, long out_max);
 uint8_t SD_Log_Init(void);
-void SD_Log_AddData(void);
+void  SD_Log_AddData(uint32_t rowTick);
 void SD_Log_Flush(void);
 void SD_Log_Stop(void);
 void SD_Log_CheckFlush(void);
@@ -367,8 +407,6 @@ int32_t mapClamp(int32_t x, int32_t in_min, int32_t in_max,
     int32_t in_range = in_max - in_min;
     if (in_range == 0)
         return out_min;
-
-    // Clamp input ke rentang dulu
     if (in_range > 0) {
         if (x < in_min) x = in_min;
         if (x > in_max) x = in_max;
@@ -427,7 +465,7 @@ uint8_t SD_Log_Init(void)
     }
 
     const char* header = "Timestamp, Throttle, BSE,RPM MOTOR,I ACTUAL, I MAX PK, ERROR BAMO, IGBT TEMP,"
-                        "MOTOR TEMP,VDC BAMO,POWER MOTOR, TEGANGAN LV, ARUS LV, TRAVEL FR, TRAVEL FL,TEGANGAN HV, ROLL, PITCH, YAW, CURRENT BMS\r\n";
+                        "MOTOR TEMP,VDC BAMO,POWER MOTOR, TEGANGAN LV, ARUS LV, TRAVEL FR, TRAVEL FL,TEGANGAN HV, ROLL, PITCH, YAW, CURRENT BMS, VOUT, TEMP BATT\r\n";
 
     UINT bw;
     fres = f_write(&logFile, header, strlen(header), &bw);
@@ -438,7 +476,14 @@ uint8_t SD_Log_Init(void)
         return 0;
     }
 
+
     f_sync(&logFile);  // Sync setelah write header
+    RTC_UpdateTime();
+    logStartTick = HAL_GetTick();
+    logStartMs   = ((uint32_t)currentTime.Hours * 3600u +
+                    (uint32_t)currentTime.Minutes * 60u +
+                     currentTime.Seconds) * 1000u;
+    nextLogTick  = logStartTick;
     logBuffer.writeIndex[0] = 0;
     logBuffer.writeIndex[1] = 0;
     logBuffer.activeBuffer = 0;
@@ -450,37 +495,40 @@ uint8_t SD_Log_Init(void)
     return 1;
 }
 
-void SD_Log_AddData(void)
+void SD_Log_AddData(uint32_t rowTick)
 {
-    // FIX: Hapus spasi aneh pada logBuffer. isLogging
-    if (!sdCardReady || !logBuffer.isLogging || logBuffer.isFlushing)
+    if (!sdCardReady || !logBuffer.isLogging)
         return;
 
-    uint8_t bufIdx = logBuffer.activeBuffer;
-    uint8_t* activeBuffer = logBuffer.buffer[bufIdx];
-    uint32_t idx = logBuffer.writeIndex[bufIdx];
+    uint8_t  bufIdx = logBuffer.activeBuffer;
+    uint32_t idx    = logBuffer.writeIndex[bufIdx];
 
-    // FIX BUG 4: Jangan switch buffer saat flush belum selesai
-    if (idx + 150 >= LOG_BUFFER_SIZE)
+    if (idx + 200 >= LOG_BUFFER_SIZE)
     {
-        // Tunggu flush selesai sebelum swap
-        if (!logBuffer.isFlushing)
-        {
-            logBuffer.activeBuffer ^= 1;
-            logBuffer.isFlushing = 1;
-        }
-        return;  // Jangan tambah data, tunggu buffer dikosongkan
+        if (logBuffer.isFlushing)
+            SD_Log_Flush();
+
+        logBuffer.activeBuffer ^= 1;
+        logBuffer.isFlushing = 1;
+        bufIdx = logBuffer.activeBuffer;
+        idx    = logBuffer.writeIndex[bufIdx];
+
+        if (idx + 200 >= LOG_BUFFER_SIZE)
+            return;
     }
+    uint32_t t  = logStartMs + (rowTick - logStartTick);
+    uint32_t ms =  t % 1000u;
+    uint32_t ss = (t / 1000u)    % 60u;
+    uint32_t mm = (t / 60000u)   % 60u;
+    uint32_t hh = (t / 3600000u) % 24u;
 
-    uint32_t ms = HAL_GetTick() % 1000;
-
-    int len = sprintf((char*)&activeBuffer[idx],
-        "%02d:%02d:%02d.%03lu,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u.%02u,%u,%u,%u,%lu,%u,%u,%u,%u\r\n",
-        currentTime.Hours, currentTime.Minutes, currentTime.Seconds, ms,
+    int len = sprintf((char*)&logBuffer.buffer[bufIdx][idx],
+        "%02lu:%02lu:%02lu.%03lu,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u.%02u,%u,%u,%u,%lu,%u,%u,%u,%u,%u,%u\r\n",
+        hh, mm, ss, ms,
         appsNextion, bsemap, RpmBamo, IActual, Imaxpk, statusBamo, suhuMotor,
         suhuIGBT, VdcBamo, powerMotor,
         teganganLV / 100, teganganLV % 100,
-        arusLV, susr, susl, teganganHVA, roll, pitch, yaw, arusBms);
+        arusLV, susr, susl, teganganHV, roll, pitch, yaw, arusBms, Vout, tempTotal);
 
     logBuffer.writeIndex[bufIdx] = idx + len;
 }
@@ -505,12 +553,12 @@ void SD_Log_Flush(void)
     fres = f_write(&logFile, flushBuffer, flushSize, &bw);
 
     if (fres == FR_OK && bw == flushSize)
-    {
-        f_sync(&logFile);
-        logBuffer.writeIndex[bufferToFlush] = 0;
-    }
-    logBuffer.isFlushing = 0;
-    logBuffer.lastFlushTick = HAL_GetTick();
+        {
+            f_sync(&logFile);
+            logBuffer.writeIndex[bufferToFlush] = 0;
+            logBuffer.isFlushing = 0;
+        }
+        logBuffer.lastFlushTick = HAL_GetTick();
 }
 
 void SD_Log_CheckFlush(void)
@@ -544,10 +592,10 @@ void SD_Log_Stop(void)
 {
     if (!sdCardReady)
         return;
-
-    // Flush semua data yang tertinggal di buffer
-    for (int i = 0; i < 2; i++)
+    uint8_t order[2] = { logBuffer.activeBuffer ^ 1, logBuffer.activeBuffer };
+    for (int k = 0; k < 2; k++)
     {
+        uint8_t i = order[k];
         if (logBuffer.writeIndex[i] > 0)
         {
             UINT bw;
@@ -555,17 +603,15 @@ void SD_Log_Stop(void)
 
             FRESULT fres = f_write(&logFile, logBuffer.buffer[i], logBuffer.writeIndex[i], &bw);
 
-            // FIX BUG 2: Pastikan data benar-benar ditulis ke SD card
             if (fres == FR_OK && bw == logBuffer.writeIndex[i])
             {
-                f_sync(&logFile);  // Sinkronkan setiap buffer
+                f_sync(&logFile);
             }
         }
     }
 
     f_close(&logFile);
     f_mount(NULL, "", 0);
-
     sdCardReady = 0;
     logBuffer.isLogging = 0;
     logBuffer.isFlushing = 0;
@@ -730,9 +776,11 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
             flagid0x10 = 1;
         	if(msgAll[0] == 0x00){
 				memcpy((void*)canSensorRSM, (void*)msgAll, 8);
+				requestAllReceived[REQ_RSM_Sensor] = 1;
         	}
         	else if(msgAll[0] == 0x01){
         		memcpy((void*)canStatusRSM, (void*)msgAll, 8);
+        		requestAllReceived[REQ_RSM_Status] = 1;
         	}
         }
         if(RxHeader.Identifier == 0x12 && RxHeader.IdType == FDCAN_STANDARD_ID)
@@ -740,41 +788,57 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
             flagid0x12 = 1;
         	if(msgAll[0] == 0x06){
 				memcpy((void*)canCurbms,(void*)msgAll, 3);
+				requestAllReceived[REQ_BMS_Current] = 1;
         	}else if(msgAll[0] == 0x07){
         		memcpy((void*)canAvgTempA,(void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_Temp] = 1;
         	}else if(msgAll[0] == 0x08){
         		memcpy((void*)canAvgTempB,(void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_Temp] = 1;
         	}else if(msgAll[0] == 0x09){
         		memcpy((void*)canVolt1, (void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_AvgA] = 1;
         	}else if(msgAll[0] == 0x10){
         		memcpy((void*)canVolt2, (void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_AvgB] = 1;
         	}else if(msgAll[0] == 0x11){
         		memcpy((void*)canMinVA, (void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_MinMaxVA] = 1;
         	}else if(msgAll[0] == 0x12){
         		memcpy((void*)canMaxVA, (void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_MinMaxVA] = 1;
         	}else if(msgAll[0] == 0x13){
         		memcpy((void*)canMinVB, (void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_MinMaxVB] = 1;
         	}else if(msgAll[0] == 0x14){
         		memcpy((void*)canMaxVB, (void*)msgAll, 8);
+        		requestAllReceived[REQ_BMS_MinMaxVB] = 1;
         	}else if(msgAll[0] == 0x15){
         		memcpy((void*)canVoltmvA, (void*)msgAll, 5);
+        		requestAllReceived[REQ_BMS_VtotalA] = 1;
         	}else if(msgAll[0] == 0x16){
         		memcpy((void*)canVoltmvB, (void*)msgAll, 5);
+        		requestAllReceived[REQ_BMS_VtotalB] = 1;
         	}
         }
         if(RxHeader.Identifier == 0x11 && RxHeader.IdType == FDCAN_STANDARD_ID){
         	if(msgAll[0] == 0x02){
         		memcpy((void*)Accel_data,(void*)msgAll, 7);
+        		requestAllReceived[REQ_IMU_Accel] = 1;
         	}else if(msgAll[0] == 0x03){
         		memcpy((void*)Gyro_data,(void*)msgAll, 7);
+        		requestAllReceived[REQ_IMU_Gyro] = 1;
         	}else if(msgAll[0] == 0x04){
         		memcpy((void*)Mag_data,(void*)msgAll, 7);
+        		requestAllReceived[REQ_IMU_Mag] = 1;
         	}else if(msgAll[0] == 0x05){
         		memcpy((void*)Angle_data,(void*)msgAll, 7);
+        		requestAllReceived[REQ_IMU_Angle] = 1;
         	}
         }
     }
 }
+
 
 void plotData(){
 	sustravRL = canSensorRSM[1];
@@ -794,7 +858,10 @@ void plotData(){
 	suhuIGBT = getIGBTTemperature(suhuIGBT);
 	VdcBamo = (Vdc[2] << 8) | Vdc[1];
 	VdcBamo = (VdcBamo*300)/16500;
-	teganganHVA = (canVoltmvA[1] << 8) | canVoltmvA[2];
+	tempA = (canAvgTempA[2] + canAvgTempA[3] + canAvgTempA[4])/3;
+	tempB = (canAvgTempB[1] + canAvgTempB[2] + canAvgTempA[3] + canAvgTempA[4])/4;
+	tempTotal = (tempA + tempB)/2;
+	teganganHVA = (canVoltmvA[1] << 24) | (canVoltmvA[2] << 16) | (canVoltmvA[3] << 8) | canVoltmvA[4];
 	teganganHVA = teganganHVA/100;
 	teganganHVB = (canVoltmvB[1] << 24) | (canVoltmvB[2] << 16) | (canVoltmvB[3] << 8) | canVoltmvB[4];
 	teganganHVB = teganganHVB/100;
@@ -806,7 +873,7 @@ void plotData(){
 	pitch = (Angle_data[3] << 8) | Angle_data[4];
 	yaw   = (Angle_data[5] << 8) | Angle_data[6];
 	Vout = (Vfase[2] << 8) | Vfase[1];
-	Vout = mapClamp(Vout, 0, 32767, 0, 4095);
+//	Vout = mapClamp(Vout, 0, 32767, 0, 4095);
 }
 
 void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs)
@@ -817,116 +884,126 @@ void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo1ITs)
         {
         	if(msgMC[0] == 0x5f){
 				memcpy((void*)canImc, (void*)msgMC, 4);
+				requestBamoReceived[REQ_BAMO_IACTUAL] = 1;
         	}else if(msgMC[0] == 0x8f){
         		memcpy((void*)canLogicmc, (void*)msgMC, 4);
+        		requestBamoReceived[REQ_BAMO_LOGICERR] = 1;
         	}else if(msgMC[0] == 0x30){
         		memcpy((void*)canNmc, (void*)msgMC, 4);
+        		requestBamoReceived[REQ_BAMO_SPEED] = 1;
         	}else if(msgMC[0] == 0xC4){
         		memcpy((void*)canIpk, (void*)msgMC, 4);
+        		requestBamoReceived[REQ_BAMO_IMAXPK] = 1;
         	}else if(msgMC[0] == 0x49){
         		memcpy((void*)Tmotor, (void*)msgMC, 4);
+        		requestBamoReceived[REQ_BAMO_TMOTOR] = 1;
         	}else if(msgMC[0] == 0x4a){
         		memcpy((void*)Tigbt, (void*)msgMC, 4);
+        		requestBamoReceived[REQ_BAMO_TIGBT] = 1;
         	}else if(msgMC[0] == 0x66){
         		memcpy((void*)Vdc, (void*)msgMC, 4);
+        		requestBamoReceived[REQ_BAMO_VDCBAT] = 1;
         	}else if(msgMC[0] == 0xf6){
         		memcpy((void*)Mpower, (void*)msgMC, 4);
         	}else if(msgMC[0] == 0x8a){
         	    memcpy((void*)Vfase, (void*)msgMC, 4);
+        	    requestBamoReceived[REQ_BAMO_VPHASE] = 1;
         	}
 
         }
 	}
 }
 
+
 void requestBamo(){
-    static uint8_t done = 0;
     static uint8_t idx = 0;
     static uint32_t last = 0;
-    if (done) return;
 
     if (HAL_GetTick() - last < 10) return;
     last = HAL_GetTick();
 
-
-    switch(idx)
+    if (!requestBamoReceived[idx])
     {
-        case 0: CANMC_Send(0x201, canVphase,3); break;
-        case 1: CANMC_Send(0x201, canLogicErr,3); break;
-        case 2: CANMC_Send(0x201, canSpeedActual,3); break;
-        case 3: CANMC_Send(0x201, canImaxpk, 3); break;
-        case 4: CANMC_Send(0x201, canTmotor, 3); break;
-        case 5: CANMC_Send(0x201, canTigbt, 3); break;
-        case 6: CANMC_Send(0x201, canIactual, 3); break;
-        case 7: CANMC_Send(0x201, canVdcBat, 3); break;
-//        case 8: CANMC_Send(0x201, canVphase, 3); break;
+        switch(idx)
+        {
+            case REQ_BAMO_VPHASE:   CANMC_Send(0x201, canVphase,3);      break;
+            case REQ_BAMO_LOGICERR: CANMC_Send(0x201, canLogicErr,3);    break;
+            case REQ_BAMO_SPEED:    CANMC_Send(0x201, canSpeedActual,3); break;
+            case REQ_BAMO_IMAXPK:   CANMC_Send(0x201, canImaxpk, 3);     break;
+            case REQ_BAMO_TMOTOR:   CANMC_Send(0x201, canTmotor, 3);     break;
+            case REQ_BAMO_TIGBT:    CANMC_Send(0x201, canTigbt, 3);      break;
+            case REQ_BAMO_IACTUAL:  CANMC_Send(0x201, canIactual, 3);    break;
+            case REQ_BAMO_VDCBAT:   CANMC_Send(0x201, canVdcBat, 3);     break;
+        }
     }
 
     idx++;
-    if (idx >= 9 ) {
-    	done = 1;
+    if (idx >= REQ_BAMO_COUNT) {
+        idx = 0;
     }
 }
 
+
 void requestAll(void)
 {
-    static uint8_t done = 0;
     static uint8_t idx = 0;
     static uint32_t last = 0;
-
-    if (done) return;
 
     if (HAL_GetTick() - last < 10) return;
     last = HAL_GetTick();
 
-    switch(idx)
+    if (!requestAllReceived[idx])
     {
-        case 0: CANALL_Send(0x03, canBMS1, 2); break;
-        case 1: CANALL_Send(0x03, canBMS2, 2); break;
-        case 2: CANALL_Send(0x03, canBMS3, 2); break;
-        case 3: CANALL_Send(0x03, canBMS4, 2); break;
-        case 4: CANALL_Send(0x03, canBMS5, 2); break;
-        case 5: CANALL_Send(0x03, canBMS6, 2); break;
-        case 6: CANALL_Send(0x01, canRsm1, 2); break;
-        case 7: CANALL_Send(0x01, canRsm2, 2); break;
-        case 8: CANALL_Send(0x02, canImu1, 2); break;
-        case 9: CANALL_Send(0x02, canImu2, 2); break;
-        case 10: CANALL_Send(0x02, canImu3, 2); break;
-        case 11: CANALL_Send(0x02, canImu4, 2); break;
-        case 12: CANALL_Send(0x03, canBMS7, 2); break;
-        case 13: CANALL_Send(0x03, canBMS8, 2); break;
+        switch(idx)
+        {
+            case REQ_BMS_Current:   CANALL_Send(0x03, canBMS1, 2); break;
+            case REQ_BMS_Temp: CANALL_Send(0x03, canBMS2, 2); break;
+            case REQ_BMS_AvgA: CANALL_Send(0x03, canBMS3, 2); break;
+            case REQ_BMS_AvgB:    CANALL_Send(0x03, canBMS4, 2); break;
+            case REQ_BMS_MinMaxVA:    CANALL_Send(0x03, canBMS5, 2); break;
+            case REQ_BMS_MinMaxVB:    CANALL_Send(0x03, canBMS6, 2); break;
+            case REQ_RSM_Sensor:   CANALL_Send(0x01, canRsm1, 2); break;
+            case REQ_RSM_Status:   CANALL_Send(0x01, canRsm2, 2); break;
+            case REQ_IMU_Accel:    CANALL_Send(0x02, canImu1, 2); break;
+            case REQ_IMU_Gyro:     CANALL_Send(0x02, canImu2, 2); break;
+            case REQ_IMU_Mag:      CANALL_Send(0x02, canImu3, 2); break;
+            case REQ_IMU_Angle:    CANALL_Send(0x02, canImu4, 2); break;
+            case REQ_BMS_VtotalA:    CANALL_Send(0x03, canBMS7, 2); break;
+            case REQ_BMS_VtotalB:    CANALL_Send(0x03, canBMS8, 2); break;
+        }
     }
 
     idx++;
 
-    if (idx >= 14) {
-        done = 1;
+    if (idx >= REQ_ALL_COUNT) {
+        idx = 0;
     }
 }
 
 void loopUtama(void){
 	ignBut = HAL_GPIO_ReadPin(IGNPORT, IGNPIN);
 	boostVal = HAL_GPIO_ReadPin(BOOSTPORT, BOOSTPIN);
-	bsemap = map(bse, bsemin, bsemax, 0, 100);
+	bsemap = mapClamp(bse, bsemin, bsemax, 0, 100);
 	bsemap = constrain(bsemap, 0, 100);
 	appsNextion = mapClamp(apps2, 24000, 42000, 0, 100);
 
-
-//	if (RpmBamo > 0 && Imaxpk > 0) {
-//		float t = (P_MAX_W * 9.549f * 32767.0f) / ((float)RpmBamo * 0.75f * (float)Imaxpk);
-//		if (t > 32767.0f) t = 32767.0f;
-//		if (t < 0.0f)     t = 0.0f;
-//		torqueCmd = (uint16_t)t;
-//	} else {
-//		torqueCmd = 32767;
-//	}
+	// bagian iki
+	if (RpmBamo > 0 && Imaxpk > 0) {
+		float t = (P_MAX_W * 9.549f * 32767.0f) / ((float)RpmBamo * 0.75f * (float)Imaxpk);
+		if (t > 32767.0f) t = 32767.0f;
+		if (t < 0.0f)     t = 0.0f;
+		torqueCmd = (uint16_t)t;
+	} else {
+		torqueCmd = 32767;
+	}
+	// tekan bagian iki nek gamau dipake constant power iki dicomment aja terus ganti variabel can dibawah dari torqueSend ke trotleCan
 
 	if(boostVal == 0){
 		trotleCan = 0;
 	}else{
-		trotleCan = mapThrottle(apps2, 32000, 44000);
+		trotleCan = mapThrottle(apps2, 24000, 44000);
 	}
-//	torqueSend = (trotleCan < torqueCmd) ? trotleCan : torqueCmd;
+	torqueSend = (trotleCan < torqueCmd) ? trotleCan : torqueCmd;
 
 	if(bsemap > 20 && ignBut == 0){
 		runSignal = 1;
@@ -938,6 +1015,9 @@ void loopUtama(void){
 	}
 	if(!runSignal){
 		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, RESET);
+	}
+	if(apps1 == 65535 || apps2 == 65535){
+		trotleCan = 0;
 	}
  	if(bsemap >= 20)remSignal = 1;
 	else if(bsemap < 20)remSignal = 0;
@@ -967,8 +1047,8 @@ void loopUtama(void){
 	canVci2[7]=Vdc[2];
 
 	canTorque[0] = 0x90;
-	canTorque[1] = trotleCan;
-	canTorque[2] = (trotleCan >> 8) & 0xff;
+	canTorque[1] = torqueSend;// nah ini sek diganti e trotleCan
+	canTorque[2] = (torqueSend >> 8) & 0xff;
 	if(HAL_GetTick() - vciInterval >= 32){
 		CANALL_Send(6, canVci, 8);
 		vciInterval = HAL_GetTick();
@@ -1108,10 +1188,10 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 //  SDIO_SDCard_Test();
-  RTC_UpdateTime();
+
   CANALL_Init();
   CANMC_Init();
-  HAL_ADC_Start_DMA(&hadc1, (uint16_t*)adc_data, 7);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_data, 7);
   HAL_Delay(2000);
   /* USER CODE END 2 */
 
@@ -1149,36 +1229,13 @@ int main(void)
 	          lastRunSignal = 0;
 	      }
 	  }
-//	        currentSwitchState = SD_Log_GetSwitchState();
-//	        if (currentSwitchState != lastSwitchState)
-//	        {
-//	            HAL_Delay(10);
-//
-//	            if (SD_Log_GetSwitchState() == currentSwitchState)
-//	            {
-//	                if (currentSwitchState == 0)
-//	                {
-//	                    if (SD_Log_Init())
-//	                    {
-//	                    }
-//	                }
-//	                else
-//	                {
-//	                    SD_Log_Stop();
-//	                }
-//
-//	                lastSwitchState = currentSwitchState;
-//	            }
-//	        }
-	        if (HAL_GetTick() - lastLogTick >= 1)
-	        {
-	            lastLogTick = HAL_GetTick();
-	            SD_Log_AddData();
-	            SD_Log_AddData();
-	        }
-	        SD_Log_CheckFlush();
+	  while (logBuffer.isLogging &&(int32_t)(HAL_GetTick() - nextLogTick) >= 0){
+		  SD_Log_AddData(nextLogTick);
+		  nextLogTick += LOG_PERIOD_MS;
+	  }
+	  SD_Log_CheckFlush();
 ////	        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, SET);
-	    }
+	}
 
     /* USER CODE END WHILE */
 
