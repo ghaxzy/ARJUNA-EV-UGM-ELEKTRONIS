@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include <string.h>
 #include <stdio.h>
+#include "as5600.h"
 extern UART_HandleTypeDef huart2;
 
 /* USER CODE END Includes */
@@ -60,6 +61,7 @@ UART_HandleTypeDef huart2;
 FDCAN_TxHeaderTypeDef canAll;
 FDCAN_TxHeaderTypeDef canMC;
 FDCAN_RxHeaderTypeDef RxHeader;
+AS5600_TypeDef as5600;
 
 
 #define RTC_BKP_MAGIC 0x32F2
@@ -1193,6 +1195,12 @@ int main(void)
   CANMC_Init();
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_data, 7);
   HAL_Delay(2000);
+  AS5600_InitStruct(&as5600);      // isi nilai default
+  as5600.i2cHandle = &hi2c1;       // sesuaikan dengan I2C yang kamu pakai
+
+  if (AS5600_Init(&as5600) != HAL_OK) {
+      Error_Handler();   // cek wiring/pull-up/magnet kalau masuk sini
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
