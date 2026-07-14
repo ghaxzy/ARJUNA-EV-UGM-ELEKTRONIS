@@ -860,9 +860,9 @@ void plotData(){
 	suhuIGBT = getIGBTTemperature(suhuIGBT);
 	VdcBamo = (Vdc[2] << 8) | Vdc[1];
 	VdcBamo = (VdcBamo*300)/16500;
-	tempA = (canAvgTempA[2] + canAvgTempA[3] + canAvgTempA[4])/3;
-	tempB = (canAvgTempB[1] + canAvgTempB[2] + canAvgTempA[3] + canAvgTempA[4])/4;
-	tempTotal = (tempA + tempB)/2;
+	tempA = canAvgTempA[1];
+	tempB = canAvgTempB[1];
+	tempTotal = (tempA + tempB)/8;
 	teganganHVA = (canVoltmvA[1] << 24) | (canVoltmvA[2] << 16) | (canVoltmvA[3] << 8) | canVoltmvA[4];
 	teganganHVA = teganganHVA/100;
 	teganganHVB = (canVoltmvB[1] << 24) | (canVoltmvB[2] << 16) | (canVoltmvB[3] << 8) | canVoltmvB[4];
@@ -990,20 +990,20 @@ void loopUtama(void){
 	appsNextion = mapClamp(apps2, 24000, 42000, 0, 100);
 
 	// bagian iki
-	if (RpmBamo > 0 && Imaxpk > 0) {
-		float t = (P_MAX_W * 9.549f * 32767.0f) / ((float)RpmBamo * 0.75f * (float)Imaxpk);
-		if (t > 32767.0f) t = 32767.0f;
-		if (t < 0.0f)     t = 0.0f;
-		torqueCmd = (uint16_t)t;
-	} else {
-		torqueCmd = 32767;
-	}
+//	if (RpmBamo > 0 && Imaxpk > 0) {
+//		float t = (P_MAX_W * 9.549f * 32767.0f) / ((float)RpmBamo * 0.75f * (float)Imaxpk);
+//		if (t > 32767.0f) t = 32767.0f;
+//		if (t < 0.0f)     t = 0.0f;
+//		torqueCmd = (uint16_t)t;
+//	} else {
+//		torqueCmd = 32767;
+//	}
 	// tekan bagian iki nek gamau dipake constant power iki dicomment aja terus ganti variabel can dibawah dari torqueSend ke trotleCan
 
 	if(boostVal == 0){
 		trotleCan = 0;
 	}else{
-		trotleCan = mapThrottle(apps2, 24000, 44000);
+		trotleCan = mapThrottle(apps2, 22000, 39000);
 	}
 	torqueSend = (trotleCan < torqueCmd) ? trotleCan : torqueCmd;
 
@@ -1049,8 +1049,8 @@ void loopUtama(void){
 	canVci2[7]=Vdc[2];
 
 	canTorque[0] = 0x90;
-	canTorque[1] = torqueSend;// nah ini sek diganti e trotleCan
-	canTorque[2] = (torqueSend >> 8) & 0xff;
+	canTorque[1] = trotleCan;// nah ini sek diganti e trotleCan
+	canTorque[2] = (trotleCan >> 8) & 0xff;
 	if(HAL_GetTick() - vciInterval >= 32){
 		CANALL_Send(6, canVci, 8);
 		vciInterval = HAL_GetTick();
@@ -1195,12 +1195,12 @@ int main(void)
   CANMC_Init();
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_data, 7);
   HAL_Delay(2000);
-  AS5600_InitStruct(&as5600);      // isi nilai default
-  as5600.i2cHandle = &hi2c1;       // sesuaikan dengan I2C yang kamu pakai
+//  AS5600_InitStruct(&as5600);      // isi nilai default
+//  as5600.i2cHandle = &hi2c1;       // sesuaikan dengan I2C yang kamu pakai
 
-  if (AS5600_Init(&as5600) != HAL_OK) {
-      Error_Handler();   // cek wiring/pull-up/magnet kalau masuk sini
-  }
+//  if (AS5600_Init(&as5600) != HAL_OK) {
+//      Error_Handler();   // cek wiring/pull-up/magnet kalau masuk sini
+//  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
